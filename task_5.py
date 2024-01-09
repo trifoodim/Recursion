@@ -1,10 +1,11 @@
 # 5. печать только чётных значений из списка;
 
 
-def print_even(ls):
+def print_even(i, arr):
+    if i >= len(arr):
+        return
 
-    if ls[0] % 2 == 0:
-        print(ls[0])
+    if arr[i] % 2 == 0:
+        print(arr[i])
 
-    ls.pop(0)
-    print_even(ls)
+    print_even(i + 1, arr)
