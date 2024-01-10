@@ -9,3 +9,8 @@ def print_even(i, arr):
         print(arr[i])
 
     print_even(i + 1, arr)
+
+
+def main(arr):
+    return print_even(0, arr)
+

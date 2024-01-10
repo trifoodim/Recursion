@@ -9,3 +9,7 @@ def is_palindrome(i, string):
         return False
 
     return is_palindrome(i + 1, string)
+
+
+def main(string):
+    return is_palindrome(0, string)

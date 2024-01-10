@@ -8,3 +8,7 @@ def print_even_idx(i, arr):
     print(arr[i])
 
     print_even_idx(i + 2, arr)
+
+
+def main(arr):
+    return print_even_idx(0, arr)
