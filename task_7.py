@@ -24,14 +24,16 @@ def find_second_max_num(numbers):
     if numbers[i] < max_num:
         second_max_num = numbers[i]
 
-    return find_second_max_num_recursive(numbers[i + 1:], max_num, second_max_num)
+    idx = i + 1
+
+    return find_second_max_num_recursive(idx, numbers, max_num, second_max_num)
 
 
-def find_second_max_num_recursive(numbers, max_num, second_max_num):
-    if not numbers:
+def find_second_max_num_recursive(idx, numbers, max_num, second_max_num):
+    if idx >= len(numbers):
         return second_max_num
 
-    current_num = numbers[0]
+    current_num = numbers[idx]
     if current_num > max_num:
         second_max_num = max_num
         max_num = current_num
@@ -42,4 +44,7 @@ def find_second_max_num_recursive(numbers, max_num, second_max_num):
     elif current_num > second_max_num:
         second_max_num = current_num
 
-    return find_second_max_num_recursive(numbers[1:], max_num, second_max_num)
+    return find_second_max_num_recursive(idx + 1, numbers, max_num, second_max_num)
+
+
+print(find_second_max_num([2, 4, 5, 9, 2, 7]))
