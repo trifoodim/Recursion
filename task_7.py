@@ -43,6 +43,3 @@ def find_second_max_num_recursive(idx, numbers, max_num, second_max_num):
         second_max_num = current_num
 
     return find_second_max_num_recursive(idx + 1, numbers, max_num, second_max_num)
-
-
-print(find_second_max_num([2, 4, 5, 9, 2, 8]))
