@@ -12,8 +12,12 @@ def find_second_max_num(numbers: List) -> Optional[int]:
         return None
 
     max_num = numbers[0]
-    second_max_num = None
-    idx = 1
+    second_max_num = numbers[1]
+
+    if max_num < second_max_num:
+        max_num, second_max_num = second_max_num, max_num
+
+    idx = 2
 
     return find_second_max_num_recursive(idx, numbers, max_num, second_max_num)
 
@@ -21,7 +25,7 @@ def find_second_max_num(numbers: List) -> Optional[int]:
 def find_second_max_num_recursive(idx: int,
                                   numbers: List,
                                   max_num: int,
-                                  second_max_num: int):
+                                  second_max_num: int) -> int:
     if idx >= len(numbers):
         return second_max_num
 
@@ -29,9 +33,6 @@ def find_second_max_num_recursive(idx: int,
     if current_num > max_num:
         second_max_num = max_num
         max_num = current_num
-
-    elif current_num < max_num and second_max_num is None:
-        second_max_num = current_num
 
     elif current_num > second_max_num:
         second_max_num = current_num
