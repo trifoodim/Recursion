@@ -6,9 +6,6 @@ import os
 from typing import List
 
 
-import os
-
-
 def print_all_files_recursive_in_one_function(dir_name: str) -> None:
 
     qualified_item_names = (os.path.join(dir_name, filename) for filename in os.listdir(dir_name))
