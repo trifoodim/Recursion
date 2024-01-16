@@ -18,6 +18,9 @@ def print_all_files_recursive_in_one_function(dir_name: str) -> List:
 
         elif os.path.isdir(item):
             new_dir_name = os.path.join(dir_name, item)
-            files_in_dir.append(print_all_files_recursive_in_one_function(new_dir_name))
+            files_in_dir.extend(print_all_files_recursive_in_one_function(new_dir_name))
 
     return files_in_dir
+
+
+print(print_all_files_recursive_in_one_function('/Users/dmitriy.trifonov/Desktop'))
